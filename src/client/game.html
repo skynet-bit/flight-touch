@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0,minimum-scale=1.0"
+    />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="screen-orientation" content="landscape" />
+    <title>Jet Flight Simulator</title>
+    <link rel="stylesheet" type="text/css" href="game.css" />
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+
+    <!-- Loading -->
+    <div id="loading">
+      <div class="ring"></div>
+      <p>Loading Assets…</p>
+    </div>
+
+    <!-- Main Menu -->
+    <div id="menu">
+      <div class="menu-grid"></div>
+      <div class="menu-glow"></div>
+      <div class="menu-content">
+        <div class="menu-badge">Flight Simulator v1.0</div>
+        <div class="menu-title">JET<span>SIM</span></div>
+        <div class="menu-sub">Military Jet · Realistic Physics</div>
+        <button id="startBtn">▶ Start Mission</button>
+        <div class="menu-tip">Best experienced in landscape mode</div>
+      </div>
+    </div>
+
+    <!-- HUD -->
+    <div id="hud">
+      <div id="hud-tape">
+        <div class="hv" id="hv-spd">SPD: 0 kt</div>
+        <div class="hv" id="hv-alt">ALT: 0 ft</div>
+        <div class="hv" id="hv-vs">V/S: 0</div>
+        <div class="hv" id="hv-hdg">HDG: 360°</div>
+      </div>
+      <div id="hud-status">
+        <div class="hp red" id="hp-gear">GEAR ▲</div>
+        <div class="hp green" id="hp-flaps">FLAPS OFF</div>
+        <div class="hp green" id="hp-thr">THR 80%</div>
+      </div>
+      <div id="stall-warn">⚠ STALL</div>
+    </div>
+
+    <!-- Controls -->
+    <div id="controls">
+      <!-- Throttle -->
+      <div id="throttle-wrap">
+        <div id="thr-label">THROTTLE</div>
+        <div id="throttle-track">
+          <div id="throttle-fill"></div>
+          <div id="throttle-notch"></div>
+          <div id="throttle-thumb"><span id="thr-pct">80%</span></div>
+        </div>
+      </div>
+
+      <!-- Joystick -->
+      <div id="joystick-base">
+        <div id="joystick-ring"></div>
+        <div id="joystick-cross-h"></div>
+        <div id="joystick-cross-v"></div>
+        <div id="joystick-thumb"></div>
+      </div>
+
+      <!-- Rudder -->
+      <div id="rudder-wrap">
+        <div id="rud-label">◄ RUDDER ►</div>
+        <div id="rudder-track">
+          <div id="rudder-center"></div>
+          <div id="rudder-fill-l"></div>
+          <div id="rudder-fill-r"></div>
+          <div id="rudder-thumb"></div>
+        </div>
+      </div>
+
+      <!-- Gear + Flaps -->
+      <div id="action-btns">
+        <button class="act-btn up" id="gear-btn">GEAR ▲ UP</button>
+        <button class="act-btn" id="flaps-btn">FLAPS OFF</button>
+      </div>
+
+      <button id="pause-btn">⏸ PAUSE</button>
+    </div>
+
+    <!-- Pause Overlay -->
+    <div class="overlay" id="pauseOverlay">
+      <div class="ov-icon">⏸</div>
+      <div class="ov-title">Paused</div>
+      <div class="ov-sub">Mission suspended</div>
+      <button class="ov-btn blue" id="resumeBtn">▶ Resume</button>
+      <button class="ov-btn red" id="restartBtn">↺ Restart Mission</button>
+    </div>
+
+    <!-- Crash Overlay -->
+    <div class="overlay" id="crashOverlay">
+      <div class="ov-icon">💥</div>
+      <div class="ov-title">Crashed</div>
+      <div class="ov-sub" id="crash-reason">Aircraft destroyed on impact</div>
+      <button class="ov-btn white" id="crashRestartBtn">↺ Try Again</button>
+    </div>
+
+    <script type="module" src="game.ts" defer></script>
+  </body>
+</html>
