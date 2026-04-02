@@ -35,12 +35,14 @@
     </div>
 
     <!-- HUD -->
+    <!-- HUD -->
     <div id="hud">
       <div id="hud-tape">
+        <div class="hv" id="hv-lvl">LVL: 1</div>
         <div class="hv" id="hv-spd">SPD: 0 kt</div>
         <div class="hv" id="hv-alt">ALT: 0 ft</div>
-        <div class="hv" id="hv-vs">V/S: 0</div>
         <div class="hv" id="hv-hdg">HDG: 360°</div>
+        <div class="hv" id="hv-pts">PTS: 0</div>
       </div>
       <div id="hud-status">
         <div class="hp red" id="hp-gear">GEAR ▲</div>
@@ -52,6 +54,9 @@
 
     <!-- Controls -->
     <div id="controls">
+      <!-- Fire Button -->
+      <button id="fire-btn">🔥 FIRE</button>
+
       <!-- Throttle -->
       <div id="throttle-wrap">
         <div id="thr-label">THROTTLE</div>
@@ -85,9 +90,32 @@
       <div id="action-btns">
         <button class="act-btn up" id="gear-btn">GEAR ▲ UP</button>
         <button class="act-btn" id="flaps-btn">FLAPS OFF</button>
+        <button class="act-btn" id="shop-btn-in">🛒 SHOP</button>
       </div>
 
       <button id="pause-btn">⏸ PAUSE</button>
+    </div>
+
+    <!-- Shop Overlay -->
+    <div class="overlay" id="shopOverlay" style="background: rgba(0, 10, 20, 0.9);">
+      <div class="ov-icon">🛒</div>
+      <div class="ov-title">Hangar Shop</div>
+      <div class="ov-sub" id="shop-credits">Credits: 0</div>
+      <div id="shop-items-container">
+        <div class="shop-item">
+          <span class="shop-item-name">Engine Power</span>
+          <button class="ov-btn blue shop-buy" data-upgrade="engine">Buy (500)</button>
+        </div>
+        <div class="shop-item">
+          <span class="shop-item-name">Fire Rate</span>
+          <button class="ov-btn blue shop-buy" data-upgrade="weapon">Buy (800)</button>
+        </div>
+        <div class="shop-item">
+          <span class="shop-item-name">Armor Plating</span>
+          <button class="ov-btn blue shop-buy" data-upgrade="armor">Buy (600)</button>
+        </div>
+      </div>
+      <button class="ov-btn white" id="closeShopBtn">Back to Hangar</button>
     </div>
 
     <!-- Pause Overlay -->
