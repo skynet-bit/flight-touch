@@ -1,26 +1,58 @@
-## Devvit Three.js Starter
+# Flight Touch ✈️
 
-A starter to build web applications on Reddit's developer platform
+A high-performance 3D flight experience built for Reddit's Developer Platform (Devvit) and the web.
 
-- [Devvit](https://developers.reddit.com/): A way to build and deploy immersive games on Reddit
-- [Vite](https://vite.dev/): For compiling the webView
-- [Three.js](https://threejs.org/): For 3D animations and physics
-- [Express](https://expressjs.com/): For backend logic
-- [TypeScript](https://www.typescriptlang.org/): For type safety
+## 🚀 Overview
 
-## Getting Started
+**Flight Touch** is an immersive 3D game where players navigate an F-16 through a detailed city environment. Built using **Three.js**, it leverages the power of modern web technologies to deliver a smooth gaming experience directly within Reddit posts or as a standalone web application.
 
-> Make sure you have Node 22 downloaded on your machine before running!
+## 🛠 Tech Stack
 
-1. Run `npm create devvit@latest --template=threejs`
-2. Go through the installation wizard. You will need to create a Reddit account and connect it to Reddit developers
-3. Copy the command on the success page into your terminal
+- **[Three.js](https://threejs.org/)**: Core 3D engine for rendering the aircraft, city, and environment.
+- **[Devvit](https://developers.reddit.com/)**: Reddit's developer platform for social integration and deployment.
+- **[Hono](https://hono.dev/)**: Lightweight web framework for server-side logic and API routes.
+- **[Vite](https://vite.dev/)**: Fast build tool and development server.
+- **[TypeScript](https://www.typescriptlang.org/)**: Type-safe development for both client and server.
 
-## Commands
+## 📁 Project Structure
 
-- `npm run dev`: Starts a development server where you can develop your application live on Reddit.
-- `npm run build`: Builds your client and server projects
-- `npm run deploy`: Uploads a new version of your app
-- `npm run launch`: Publishes your app for review
-- `npm run login`: Logs your CLI into Reddit
-- `npm run type-check`: Type checks, lints, and prettifies your app
+- `src/client/`: The 3D game engine, splash screen, and UI components.
+- `src/server/`: Devvit app logic, post creation, and server-side triggers.
+- `src/shared/`: Shared types and API definitions.
+- `public/assets/`: 3D models (`f16.glb`, `city.glb`) and environmental textures.
+
+## ⚡ Getting Started
+
+### Prerequisites
+- Node.js (>= 22.2.0)
+- [Devvit CLI](https://developers.reddit.com/docs/quickstart)
+
+### Development
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+2. **Login to Devvit**:
+   ```bash
+   npm run login
+   ```
+3. **Start playtesting**:
+   ```bash
+   npm run dev
+   ```
+
+## 🚢 Deployment
+
+### Reddit (Devvit)
+To upload a new version to Reddit:
+```bash
+npm run deploy
+```
+
+### Web (Netlify)
+The game is automatically deployed to **Netlify** whenever changes are pushed to the `Release` branch via GitHub Actions.
+
+## 🎮 Features
+- **Dynamic 3D Environments**: Explore a high-fidelity city model with realistic lighting and textures.
+- **Smooth Flight Controls**: Optimized for both touch and mouse interaction.
+- **Reddit Integration**: Seamlessly embedded within Reddit posts with custom interactive elements.
